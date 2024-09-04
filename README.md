@@ -6,5 +6,4 @@ yarn
 yarn dev
 ```
 
-
-![image](https://user-images.githubusercontent.com/6551176/221732091-23ee52cb-4150-42fa-b998-43628d7a6b0d.png)
+![test](https://github.com/user-attachments/assets/e23ef368-3fd3-4e12-a3b5-470800f18d10)
