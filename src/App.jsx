@@ -1,19 +1,20 @@
 import { Canvas, useLoader } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
+import { Perf } from "r3f-perf";
 import { Boxes } from "./Boxes";
 import { TextureLoader } from "three";
 
 const TextureDebug = ({ texture }) => {
   return (
-    <mesh position={[0, -0.5, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+    <mesh position={[0, 0, 0]} rotation={[-Math.PI / 2, 0, 0]}>
       <planeGeometry args={[10, 10]} />
-      <meshBasicMaterial map={texture} transparent opacity={1}/>
+      <meshBasicMaterial map={texture} transparent opacity={1} />
     </mesh>
   );
-}
+};
 
 function App() {
-  const maskTexture = useLoader(TextureLoader, 'pattern-26399_1280.png');
+  const maskTexture = useLoader(TextureLoader, "pattern-26399_1280.png");
 
   return (
     <Canvas>
@@ -21,6 +22,7 @@ function App() {
       <ambientLight />
       <Boxes maskTexture={maskTexture} />
       <TextureDebug texture={maskTexture} />
+      <Perf matrixAutoUpdate />
     </Canvas>
   );
 }
