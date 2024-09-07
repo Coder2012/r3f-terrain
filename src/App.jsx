@@ -14,7 +14,7 @@ const TextureDebug = ({ texture }) => {
 };
 
 function App() {
-  const maskTexture = useLoader(TextureLoader, "pattern-26399_1280.png");
+  const maskTexture = useLoader(TextureLoader, "MaskTexture.png");
 
   return (
     <Canvas>

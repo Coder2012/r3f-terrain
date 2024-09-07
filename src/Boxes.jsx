@@ -29,7 +29,7 @@ export const InstancedTrees = ({ points }) => {
       material={materials.TreeMaterial}
     >
       {points.map((point, index) => (
-        <Instance key={index} position={point} scale={[0.2, 0.2, 0.2]} />
+        <Instance key={index} position={point} scale={[0.5, 0.5, 0.5]} />
       ))}
     </Instances>
   );
@@ -43,7 +43,7 @@ export const Boxes = ({ maskTexture }) => {
 
     const sampler = new PoissonDiskSampling({
       shape: [width, height],
-      minDistance: 10,
+      minDistance: 20,
       tries: 30,
     });
 
@@ -52,10 +52,10 @@ export const Boxes = ({ maskTexture }) => {
       .map(([x, z]) => {
         const texX = Math.floor(x);
         const texY = Math.floor(z);
-        const index = (texY * width + texX) * 4 + 3; // Alpha channel
+        const index = (texY * width + texX) * 4;
         const maskValue = data[index];
 
-        if (maskValue === 255) {
+        if (maskValue > 200) {
           return [(x / width) * 10 - 5, 0, (z / height) * 10 - 5];
         }
         return null;
