@@ -29,7 +29,7 @@ export const InstancedTrees = ({ points }) => {
       material={materials.TreeMaterial}
     >
       {points.map((point, index) => (
-        <Instance key={index} position={point} scale={[0.5, 0.5, 0.5]} />
+        <Instance key={index} position={point} scale={[2, 2, 2]} />
       ))}
     </Instances>
   );
@@ -43,7 +43,7 @@ export const Boxes = ({ maskTexture }) => {
 
     const sampler = new PoissonDiskSampling({
       shape: [width, height],
-      minDistance: 20,
+      minDistance: 80,
       tries: 30,
     });
 

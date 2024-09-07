@@ -22,7 +22,16 @@ function App() {
       <ambientLight />
       <Boxes maskTexture={maskTexture} />
       <TextureDebug texture={maskTexture} />
-      <Perf matrixAutoUpdate />
+      <Perf
+        position="top-left"
+        style={{
+          transform: "scale(1.5) translate(0, 20px)", // Scale up and adjust downwards
+          zIndex: 1000,
+          top: "10px", // Adjust top position if necessary
+          left: "10px", // Adjust left position if needed
+        }}
+        matrixAutoUpdate
+      />
     </Canvas>
   );
 }
